@@ -10,9 +10,9 @@ public class ConsumerService {
 
     private static final Logger logger = LoggerFactory.getLogger(ConsumerService.class);
 
-    @KafkaListener(topics = "jay-topic", groupId = "group-1")
-    public String receive(String message) {
-        logger.info("Message received by consumer: " +message);
-        return message;
-    }
+    // @KafkaListener(topics = "jay-topic", groupId = "group-1")
+    // public String receive(String message) {
+    //     logger.info("Message received by consumer: " +message);
+    //     return message;
+    // }
 }
