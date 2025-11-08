@@ -3,8 +3,8 @@ spring:
   application:
     name: spring-kafka
   kafka:
-    bootstrap-servers:
-      - localhost:9092
+    # Use environment variable if set, otherwise default to localhost:9092
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:-localhost:9092}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -18,3 +18,5 @@ logging:
   level:
     root: INFO
     com.jai: DEBUG
+    org.apache.kafka: INFO
+    org.springframework.kafka: DEBUG
